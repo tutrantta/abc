@@ -1,71 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>@yield('title', 'TAV - ETM')</title>
-    <!-- Bootstrap Core CSS -->
-    {{HTML::style('assets/plugins/bootstrap/dist/css/bootstrap.min.css')}}
-    <!-- Custom CSS -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>TTV - Login Form</title>
     {{HTML::style('assets/css/style.css')}}
-    {{HTML::style('assets/css/main.css')}}
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4 ta-img-logo">
-                {{ HTML::image('/assets/img/tta_logo.png') }}
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-md-offset-4">
-                {{ Helper::ShowErrorsMessage($errors) }}
-                {{ Helper::ShowSuccessMessage() }}
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Login Panel</h3>
+<div class="w-container">
+    <div class="w-form">
+        {{Form::open(['id' => 'wf-form-Login-Form', 'name' => "wf-form-Login-Form", 'route' => 'login-post'])}}
+            <div class="w-nav" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1">
+                <div class="w-container">
+                    <a class="w-nav-brand" href="#"></a>
+                    <nav class="w-nav-menu" role="navigation"><a class="w-nav-link" href="{{URL::route('login-index')}}">Home</a>
+                    </nav>
+                    <div class="w-nav-button">
+                        <div class="w-icon-nav-menu"></div>
                     </div>
-                    <div class="panel-body">
-                        {{ Form::open(['route'=>'login-post','class'=>'form-signin']) }}
-                        {{-- show error message --}}
-                        <fieldset>
-                            <div class="form-group">
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                    {{ Form::text('username','',array('class' => 'form-control','placeholder'=>"username")) }}
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="input-group">
-                                   <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                   {{ Form::password('password',array('class' => 'form-control','placeholder'=>"password")) }}
-                               </div>
-                           </div>
-                           <!-- Change this to a button or input when using this as a form -->
-                           {{ Form::submit('Login',array('class'=>"btn btn-lg btn-primary btn-block")) }}
-                       </fieldset>
-                       {{ Form::close() }}
-                   </div>
-               </div>
-           </div>
-       </div>
-       <div class="row">
-        <div class="col-md-4 col-md-offset-4">
-            <a href="#">Forgot Password !</a>
+                </div>
+            </div>
+            <h1>Login</h1>
+            <label for="UserName">Username:</label>
+            {{Form::text('username', '', ['class' => 'w-input', 'id' => 'UserName', 'placeholder' => 'Enter your username', 'required' => 'required'])}}
+            <label for="Password">Password:</label>
+            {{Form::password('password', ['class' => 'w-input', 'id' => 'Password', 'placeholder' => 'Enter your password', 'required' => 'required'])}}
+            <div class="w-row">
+                <div class="w-col w-col-6"></div>
+                <div class="w-col w-col-6">
+                    {{Form::submit('Login', ['class' => 'w-button'])}}
+                </div>
+            </div>
+        </form>
+        <div class="w-form-done">
+            <p>Thank you! Your submission has been received!</p>
+        </div>
+        <div class="w-form-fail">
+            <p>Oops! Something went wrong while submitting the form :(</p>
         </div>
     </div>
-    <hr/>
-    <h6 class="text-center">TTV 1.0.0</h6>
-    <h6 class="text-center">© 2015 TTV, Inc. All rights reserved.</h6>
 </div>
-<!-- /#wrapper -->
-<!-- jQuery -->
-{{HTML::script('assets/plugins/jquery/dist/jquery.min.js')}}
-<!-- Bootstrap Core JavaScript -->
-{{HTML::script('assets/plugins/bootstrap/dist/js/bootstrap.min.js')}}
+
 </body>
 </html>

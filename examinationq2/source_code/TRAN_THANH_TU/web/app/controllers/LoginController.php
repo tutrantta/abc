@@ -2,9 +2,9 @@
 /**
  * Login Controller
  *
- * Date                Author     Content
+ * Date                Author         Content
  * ----------------------------------------------------
- * 2015-03-24          NgocNguyen     Create File
+ * 2015-05-05          tttu           Create File
  */
 
 
@@ -19,9 +19,9 @@ class LoginController extends \BaseController {
 	}
 
 	/**
-     * @author NgocNguyen
+     * @author tttu
      * @name index
-     * @todo show form login
+     * load login form
      * @return Response
      */
 	public function index()
@@ -31,9 +31,9 @@ class LoginController extends \BaseController {
 
 
 	/**
-     * @author NgocNguyen
+     * @author tttu
      * @name postLogin
-     * @todo excute login action
+     * 
      * @return Response
      */
 	public function postLogin()
