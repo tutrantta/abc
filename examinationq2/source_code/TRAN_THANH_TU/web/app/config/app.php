@@ -125,7 +125,6 @@ return array(
 		// Internal Packages
 		'Helper\Services\HelperServiceProvider',
 		'Helper\Services\ValidationExtensionServiceProvider',
-		'Maatwebsite\Excel\ExcelServiceProvider',
 
 	),
 
@@ -195,8 +194,7 @@ return array(
 		'View'              => 'Illuminate\Support\Facades\View',
 		// Internal Packages
 		'Helper'     => 'Helper\Facades\HelperFacade',
-		'Excel' => 'Maatwebsite\Excel\Facades\Excel',
-                'Datatable' => 'Helper\Facades\Datatable',
+		'Datatable' => 'Helper\Facades\Datatable',
 	),
 
 );

@@ -8,7 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'React\\Promise\\' => array($vendorDir . '/react/promise/src'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
-    'Helper\\' => array($baseDir . '/app/helper'),
+    'Helper\\' => array($baseDir . '/app/Helper'),
     'GuzzleHttp\\Stream\\' => array($vendorDir . '/guzzlehttp/streams/src'),
     'GuzzleHttp\\Ring\\' => array($vendorDir . '/guzzlehttp/ringphp/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),

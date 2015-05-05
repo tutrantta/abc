@@ -26,7 +26,7 @@
 			"app/tests/TestCase.php"
 		],
 		"psr-4": {
-	        "Helper\\": "app/helper"
+	        "Helper\\": "app/Helper"
 	    }
 	},
 	"scripts": {
