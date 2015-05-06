@@ -15,15 +15,6 @@ class Helper
 
     }
 
-    /**
-     *
-     * @author  NgocNguyen
-     * @name    ShowErrorsMessage
-     * @todo    Show message validation
-     * @params  array $errors
-     * @return  
-     *
-     */
     public static function ShowErrorsMessage($errors){
         if(\Session::has('errors')){
             $tags = '<div class="alert alert-danger alert-dismissible" role="alert">';
@@ -37,15 +28,7 @@ class Helper
         }
         return false;
     }
-    /**
-     *
-     * @author  NgocNguyen
-     * @name    ShowSuccessMessage
-     * @todo    Show success message 
-     * @params  
-     * @return  
-     *
-     */
+
     public static function ShowSuccessMessage(){
         if(\Session::has('flash_message')){
             $tags = '<div class="alert alert-success">';
@@ -76,44 +59,5 @@ class Helper
             }
         }
         return $result;
-    }
-
-    /**
-     * convert to array|object key and name
-     * 
-     * @author Dung Le
-     *
-     * @param array|object data with element is object
-     * @return array with $key => $column
-     */
-    public static function getArrayIdValue($arrData, $key = 'id', $column = 'name')
-    {
-        $arrResult = array();
-        foreach ($arrData as $value) {
-            if (is_object($value)) {
-                $k = $value->{$key};
-                $arrResult[$k] = $value->{$column};
-            } else {
-                $k = $value[$key];
-                $arrResult[$k] = $value[$column];
-            }
-        }
-        return $arrResult;
-    }
-
-    /**
-     * checkExist function support exists check in table
-     *
-     * @author Dung Le
-     *
-     * @param  integer $id       : value of column
-     * @param  string  $colum    : column check
-     * @param  string  $table    : table check
-     * @return bool    true|false
-     */
-    public static function checkExist($id, $column = 'class_id', $table = 'classes')
-    {
-        $exist = \DB::table($table)->where($column, $id)->exists();
-        return $exist;
     }
 }

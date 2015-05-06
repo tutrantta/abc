@@ -16,12 +16,12 @@
  */
 
 Route::get('/', [
-    'as' => 'login-index',
+    'as'   => 'login-index',
     'uses' => 'LoginController@index'
 ]);
 
 Route::get('/login', [
-    'as' => 'login-index',
+    'as'   => 'login-index',
     'uses' => 'LoginController@index'
 ]);
 //Route::get('logout', [
@@ -40,10 +40,22 @@ Route::get('/login', [
 //]);
 Route::group(['before' => 'csrf'], function () {
     Route::post('/login', [
-        'as' => 'login-post',
+        'as'   => 'login-post',
         'uses' => 'LoginController@postLogin'
     ]);
 });
+
+/**
+ * Product
+ */
+
+Route::group(['prefix' => 'product', 'namespace' => 'Product'], function () {
+    Route::get('/list', [
+        'as'   => 'product-list',
+        'uses' => 'ProductController@getList'
+    ]);
+});
+
 //
 ///**
 // * Engineer Skill  Module

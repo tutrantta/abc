@@ -3,10 +3,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>TTV - Login Form</title>
+    <!-- Bootstrap Core CSS -->
+    {{HTML::style('assets/plugins/bootstrap/dist/css/bootstrap.min.css')}}
+    <!-- Custom CSS -->
     {{HTML::style('assets/css/style.css')}}
+    {{HTML::style('assets/css/main.css')}}
 </head>
 <body>
 <div class="w-container">
+    {{Helper::ShowErrorsMessage($errors)}}
     <div class="w-form">
         {{Form::open(['id' => 'wf-form-Login-Form', 'name' => "wf-form-Login-Form", 'route' => 'login-post'])}}
             <div class="w-nav" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1">
@@ -21,7 +26,7 @@
             </div>
             <h1>Login</h1>
             <label for="UserName">Username:</label>
-            {{Form::text('username', '', ['class' => 'w-input', 'id' => 'UserName', 'placeholder' => 'Enter your username', 'required' => 'required'])}}
+            {{Form::text('user_name', '', ['class' => 'w-input', 'id' => 'UserName', 'placeholder' => 'Enter your username', 'required' => 'required'])}}
             <label for="Password">Password:</label>
             {{Form::password('password', ['class' => 'w-input', 'id' => 'Password', 'placeholder' => 'Enter your password', 'required' => 'required'])}}
             <div class="w-row">
@@ -39,6 +44,8 @@
         </div>
     </div>
 </div>
-
+{{HTML::script('assets/plugins/jquery/dist/jquery.min.js')}}
+<!-- Bootstrap Core JavaScript -->
+{{HTML::script('assets/plugins/bootstrap/dist/js/bootstrap.min.js')}}
 </body>
 </html>

@@ -1,32 +1,30 @@
 <?php
 /**
- * Utilization Import Controller
+ * Product Controller
  *
  * Date                Author             Content
  * ----------------------------------------------------
- * 2015-04-06          Tran Thanh Tu      Create File
+ * 2015-05-06          tttu               Create File
  */
 
-namespace Import;
-use Maatwebsite\Excel\Facades\Excel;
+namespace Product;
 
-class UtilizationImportController extends \BaseController {
+class ProductController extends \BaseController {
 
-    protected $utilizationImportModel;
+    protected $productModel;
 
-    public function __construct(\UtilizationImport $utilizationImport)
+    public function __construct(\ProductModel $product)
     {
-        $this->utilizationImportModel = $utilizationImport;
+        $this->productModel = $product;
     }
     /**
-     * @author Tran Thanh Tu
+     * @author tttu
      * @name index
-     * @todo
      * @return Response
      */
-    public function index()
+    public function getList()
     {
-        return \View::make('import.utilization.index');
+        return \View::make('product.index');
     }
 
     /**

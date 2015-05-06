@@ -33,26 +33,16 @@ class LoginController extends \BaseController {
 	/**
      * @author tttu
      * @name postLogin
-     * 
+     *
      * @return Response
      */
 	public function postLogin()
 	{
-		if($this->userModel->validate() == false){
-			return \Redirect::route('login-index')->withErrors($this->userModel->errors())
-												 ->withInput(\Input::except('password'));
-		}
-		//get params
-		$this->params = [
-			'username'=>\Input::get('username'),
-			'password'=>\Input::get('password'),
-		];
 		//check login
-		if($this->userModel->checkLogin($this->params)){
-			return Redirect::route('home');
+		if($this->userModel->checkLogin(\Input::get('user_name'), \Input::get('password'))){
+			return Redirect::route('product-list');
 		}
-		return Redirect::route('login-index')->withErrors('Invalid credentials !')
-												->withInput(\Input::except('password'));
+		return Redirect::refresh()->withErrors($this->userModel->errors())->withInput(\Input::except('password'));
 	}
 
 	/**
